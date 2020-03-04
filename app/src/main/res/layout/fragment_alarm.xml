@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="me.adamoflynn.dynalarm.AlarmFragment"
+    >
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Routines"
+        android:id="@+id/routines"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/duration"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="48dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:id="@+id/start"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_alignTop="@+id/stop"
+        android:layout_alignStart="@+id/mapsButton"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Current Time"
+        android:id="@+id/duration"
+        android:layout_alignParentTop="true"
+        android:textColor="#ffffff"
+        android:textSize="48sp"
+        android:clickable="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="timePicker"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:id="@+id/stop"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="110dp"
+        android:layout_below="@+id/trafficCheck"
+        android:layout_alignParentEnd="true"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/routineCheck"
+        android:checked="false"
+        android:fitsSystemWindows="false"
+        android:layout_alignBottom="@+id/routines"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="49dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/trafficCheck"
+        android:checked="false"
+        android:layout_alignBottom="@+id/mapsButton"
+        android:layout_alignEnd="@+id/routineCheck"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Journey"
+        android:id="@+id/mapsButton"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/routines"
+        android:layout_alignStart="@+id/routines"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Wake Up Time"
+        android:id="@+id/wakeUp"
+        android:textColor="#ffffff"
+        android:layout_above="@+id/routines"
+        android:layout_centerHorizontal="true"/>
+
+
+</RelativeLayout>

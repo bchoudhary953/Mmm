@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="me.adamoflynn.dynalarm">
+
+    <!--The ACCESS_COARSE/FINE_LOCATION permissions are not required to useGoogle Maps Android API v2, but you must specify either coarse or finelocation permissions for the 'MyLocation' functionality. -->
+
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true"/>
+
+
+    <application android:name=".Application" android:theme="@style/DynAlarmTheme" android:supportsRtl="true" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:allowBackup="true">
+
+
+    <activity android:name=".MainActivity" android:theme="@style/DynAlarmTheme" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="singleInstance">
+
+
+    <intent-filter>
+
+    <action android:name="android.intent.action.MAIN"/>
+
+    <action android:name="me.adamoflynn.dynalarm.action.WAKEUP"/>
+
+    <action android:name="me.adamoflynn.dynalarm.action.TRAFFIC"/>
+
+    <category android:name="android.intent.category.LAUNCHER"/>
+
+</intent-filter>
+
+</activity>
+
+    <activity android:name=".SleepActivity" android:screenOrientation="portrait"> </activity>
+
+    <activity android:name=".LocationActivity" android:screenOrientation="portrait"> </activity>
+
+    <activity android:name=".MapsActivity" android:label="@string/title_activity_maps" android:screenOrientation="portrait"/>
+
+    <activity android:name=".RoutineActivity" android:theme="@style/DynAlarmTheme" android:screenOrientation="portrait"> </activity>
+
+    <!--The API key for Google Maps-based APIs is defined as a string resource.(See the file "res/values/google_maps_api.xml").Note that the API key is linked to the encryption key used to sign the APK.You need a different API key for each encryption key, including the release key that is used tosign the APK for publishing.You can define the keys for the debug and release targets in src/debug/ and src/release/. -->
+
+
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key"/>
+
+    <service android:name=".services.AccelerometerService" android:exported="false" android:enabled="true"> </service>
+
+    <service android:name=".services.TrafficService" android:exported="false" android:enabled="true"> </service>
+
+    <service android:name=".services.WakeUpService" android:exported="false" android:enabled="true"> </service>
+
+    <service android:name=".services.AlarmSound" android:exported="false" android:enabled="true"> </service>
+
+    <receiver android:name=".receivers.AlarmReceiver" android:exported="false"> </receiver>
+
+
+    <receiver android:name=".receivers.WakeUpReceiver" android:exported="false">
+
+
+    <intent-filter>
+
+    <action android:name="me.adamoflynn.dynalarm.action.WAKEUP"/>
+
+    <action android:name="me.adamoflynn.dynalarm.action.TRAFFIC"/>
+
+    <category android:name="android.intent.category.DEFAULT"/>
+
+</intent-filter>
+
+</receiver>
+
+</application>
+
+</manifest>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="24dp">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationName"
+        android:hint="Location Name"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        android:inputType="textCapWords"
+        android:layout_marginTop="10dp"
+        android:textColorHint="@color/textHint"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/address"
+        android:hint="Address of Location"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        android:textAlignment="center"
+        android:inputType="textPostalAddress"
+        android:textColorHint="@color/textHint"
+        android:textIsSelectable="true"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:layout_marginLeft="4dp"/>
+
+</LinearLayout>

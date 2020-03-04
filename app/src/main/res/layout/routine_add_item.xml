@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="24dp">
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        android:hint="Routine Name"
+        android:inputType="textCapWords"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/textHint"/>
+
+    <Spinner
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/desc"
+        android:layout_gravity="left|center"
+        android:spinnerMode="dropdown"
+        android:focusableInTouchMode="false"
+        android:focusable="true"
+        android:dropDownWidth="wrap_content"/>
+
+
+</LinearLayout>
